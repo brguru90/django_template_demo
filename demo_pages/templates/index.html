@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script type="text/javascript" src="{% static 'js/test.js' %}" defer ></script>
+    <title>Home</title>
+</head>
+<body>
+    {% include "common/header.html" %}
+    <div class="content_body">
+        <h1 class="pg_h1">Home page</h1>
+
+        <ul>
+            <li> <a href="/">Home page<a> </li>
+            <li> <a href="/page2">page2<a> </li>
+        </ul>
+        
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Full name</th>
+                <th>City</th>
+            </tr>
+            <tr>
+                <td>{{ name }}</td>
+                <td>{{ FullName }}</td>
+                <td>{{ city }}</td>
+            </tr>
+
+        </table>
+
+
+        <table>
+            <caption>Programming skills</caption>
+            <tr>
+                <th>Language</th>
+                <th>Skill level</th>
+            </tr>
+
+            {% for skills in  programming_skills %}
+                <tr>
+                    <td>{{ skills.language }}</td>
+                    <td>{{ skills.skill }}</td>
+                </tr>
+            {% endfor %}
+
+        </table>
+
+        
+
+    </div>
+     {% include "common/footer.html" %}
+</body>
+</html>

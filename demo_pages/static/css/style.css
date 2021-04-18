@@ -1,0 +1,16 @@
+.pg_h1{
+    color : red
+}
+
+
+body{
+    min-height: 100vh;
+    background-color: lightcyan;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+}
+
+body .content_body{
+    flex-grow: 1;
+}
