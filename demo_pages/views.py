@@ -43,7 +43,7 @@ def test(request):
         "test_msg":"failed",
         "method":request.method
     })
-    
+
 class TestView(View):
     def get(self, request):
         return HttpResponse("its get method")    
@@ -57,6 +57,7 @@ class TestView(View):
     @method_decorator(csrf_exempt)
     def dispatch(self, request, *args, **kwargs):
         return super(TestView, self).dispatch(request, *args, **kwargs)
+
 
 def index(request):   
     return render(request, 'index.html', context=data)
